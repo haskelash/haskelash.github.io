@@ -10,9 +10,13 @@
                 {{ content }}
             </article>
 
+            {% comment %}
             {% include share.html %}
+            {% endcomment %}
             {% include author.html %}
+            {% comment %}
             {% include comments.html %}
+            {% endcomment %}
             {% include footer.html %}
         </section>
     </body>
