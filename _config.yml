@@ -40,4 +40,4 @@ links:
     url: /tags
 
 # exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules', 'series.html']
+exclude: ['package.json', 'src', 'node_modules', 'series.html', 'feed.xml']
