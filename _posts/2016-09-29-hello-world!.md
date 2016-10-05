@@ -22,7 +22,7 @@ Hello world! I'm excited to be writing my first (of hopefully many) blog posts. 
 
 Why I'm starting this blog:
 
-- To give back to the dev comunity that has already given me so much
+- To give back to the dev community that has already given me so much
 - To commit what I learn to writing so that I have a log of what I've learned
 - To share my ideas and projects with other people
 

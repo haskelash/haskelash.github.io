@@ -11,7 +11,7 @@ categories:
 twitter_text:
 ---
 
-Often you need to detect when a custom view's `frame` or `bounds` is about to change or just did change. To do this, you can override the `frame` or `bounds` variables. Thenk, in curly braces, add two methods called `willSet` and `didSet`. Inside these methods you can access arguements called `newValue` and `oldValue`, respectively.  You can also access the current value of `frame` or `bounds` from within both of these methods via their normal variable names.
+Often you need to detect when a custom view's `frame` or `bounds` is about to change or just did change. To do this, you can override the `frame` or `bounds` variables. Then, in curly braces, add two methods called `willSet` and `didSet`. Inside these methods you can access arguements called `newValue` and `oldValue`, respectively.  You can also access the current value of `frame` or `bounds` from within both of these methods via their normal variable names.
 
 {% highlight swift %}
 class SomeSubview: UIView {
