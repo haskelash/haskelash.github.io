@@ -42,7 +42,7 @@ struct Node<Element> {
 
 This won’t build, and the compiler will tell you that structs can’t have recursive properties. Well that’s not fun. Then next thing to do would be to use a class and store everything by reference. But this is Swift. We want it to be Swifty! Luckily, there is a third type...
 
-### The Extraordinary `Enum` with an Incredible `Inderect` Case
+### The Extraordinary `Enum` with an Incredible `Indirect` Case
 
 While Swift disallows structs from having recursive properties, it very much allows this for `enums` with associated values. All you have to do is use the `indirect` keyword for the recursive case. We can define a queue very simply like this:
 
