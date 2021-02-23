@@ -152,21 +152,21 @@ head
   ----------------------
 ```
 
-Inserting would work like in any a doubly linked list. Let's say you have `prev` and `next` which currently point to each other:
+Inserting would work like in any doubly linked list. For any node, its `prev` and `next` would point to itself:
 
 ```
-prev.next == next
-next.prev == prev
+prev.next == self
+next.prev == self
 ```
 
-If you want to insert `node`, you would need to re-wire four connections:
+If you want to insert `node` before `self`, you would need to re-wire four connections:
 
 ```
 prev.next = node
 node.prev = prev
 
-node.next = next
-next.prev = node
+node.next = self
+self.prev = node
 ```
 
 Unfortunately, while Swift enums *can* be recursive, they *can't* recursively end up containing themselves (as far as I can tell). On the very first enqueue, we have a problem. We would need to do something like this:
@@ -194,8 +194,9 @@ if (prev == self && next == self) {
 The issue is that `==` is not defined for enums. We have to define it ourselves. And in our case there are two ways to do that:
 1. Check the equality of the two values of the nodes, and recursively check the equality of `prev` and `next`. This means the equality check takes O(n) time, which in turn makes `dequeue` O(n).
 2. Limit our queue to having `Set` behavior (unique values), and just check the equality of the two values. If they're the same, they must be the same node. This saves time on equality checks, but it means that on insertion we need to check the whole queue to make sure it doesn't already contain the new value. This brings `enqueue` back to O(n) time.
+
 Additionally, implementing `==` means that we would need to constrain `Element` to conforming to `Compareable`, which we didn't need to do previously.
 
 ### Conclusion
 
-We learned how to make a value-type `Queue` using a `struct` and an `enum`. In doing so we had to make either `enqueue` or `dequeue` work in linear instead of constant time. But we gained simplicity and value-type behavior. This makes our queue very Swifty, and makes it friendly with other value-type data structures like graphs, trees, and sorting algorithms.
+We learned how to make a value-type `Queue` using a `struct` and an `enum`. In doing so we had to make either `enqueue` or `dequeue` work in linear instead of constant time. But we gained simplicity and value-type behavior. This makes our queue more Swifty, and makes it friendly with other value-type data structures like graphs, trees, and sorting algorithms.
