@@ -200,3 +200,5 @@ Additionally, implementing `==` means that we would need to constrain `Element` 
 ### Conclusion
 
 We learned how to make a value-type `Queue` using a `struct` and an `enum`. In doing so we had to make either `enqueue` or `dequeue` work in linear instead of constant time. But we gained simplicity and value-type behavior. This makes our queue more Swifty, and makes it friendly with other value-type data structures like graphs, trees, and sorting algorithms.
+
+You can check out the full implementation of the Queue [here](https://gist.github.com/haskelash/faeebdbd61d5f2da7fa05d0aa552064a).
